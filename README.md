@@ -1,9 +1,9 @@
-# Your Project Title Here
-Name: Your Full Name
+# Online Bike Gears
+Name: Aashish Maharjan
 
-CollegeID: Your College ID
+CollegeID: 160022
 
-Batch: Jan19A/B/C/D?
+Batch: Jan19A
 
 Brief description of the domain of your project!
 
