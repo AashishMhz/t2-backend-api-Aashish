@@ -1,13 +1,12 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var product_typeSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    }
-},
-);
+  name: {
+    type: String,
+    required: true
+  }
+});
 
-var Products_type = mongoose.model('Product_type', product_typeSchema);
+var Products_type = mongoose.model("Product_type", product_typeSchema);
 module.exports = Products_type;

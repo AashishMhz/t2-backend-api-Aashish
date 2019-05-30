@@ -6,7 +6,7 @@ var mongoose = require("mongoose");
 var session = require("express-session");
 var fileStore = require("session-file-store")(session);
 var Authenticate = require("./authenticate");
-var passport = require('passport');
+var passport = require("passport");
 
 const url = "mongodb://localhost:27017/BikeGears";
 const connect = mongoose.connect(url, {
