@@ -4,11 +4,13 @@ var Schema = mongoose.Schema;
 var productSchema = new Schema({
   Product_name: {
     type: String,
-    required: true
+    required: true,
+    default: false
   },
 
   Product_type: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'product_type',
     required: true
   },
 
@@ -20,7 +22,20 @@ var productSchema = new Schema({
   Product_price: {
     type: String,
     required: true
+  },
+
+  quantity: {
+    type: Number,
+    required: true
+  },
+
+  product_Image:{
+    type: String,
+    required: ''
   }
+},
+{
+  timestamps: true
 });
 
 var Products = mongoose.model("Product", productSchema);

@@ -4,8 +4,12 @@ var Schema = mongoose.Schema;
 var product_typeSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    default: false
   }
+},
+{
+  timestamps: true
 });
 
 var Products_type = mongoose.model("Product_type", product_typeSchema);
