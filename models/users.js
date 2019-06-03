@@ -18,6 +18,6 @@ var userSchema = new Schema({
   }
 });
 
-User.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose);
 var Users=mongoose.model('User',userSchema);
 module.exports = Users;

@@ -4,8 +4,7 @@ var auth = require("../auth");
 
 var router = express.Router();
 
-router
-  .route("/")
+router.route("/")
   .get((req, res, next) => {
     Products.find({})
       .then(
@@ -48,8 +47,7 @@ router
       .catch(err => next(err));
   });
 
-router
-  .route("/:id")
+router.route("/:id")
   .get((req, res, next) => {
     Products.findById(req.params.id)
       .then(
