@@ -2,24 +2,24 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var productSchema = new Schema({
-  Product_name: {
+  product_name: {
     type: String,
     required: true,
     default: false
   },
 
-  Product_type: {
+  product_type: {
     type: Schema.Types.ObjectId,
     ref: 'product_type',
-    required: true
+    required: false
   },
 
-  Product_description: {
+  product_description: {
     type: String,
     required: true
   },
 
-  Product_price: {
+  product_price: {
     type: String,
     required: true
   },
@@ -29,7 +29,7 @@ var productSchema = new Schema({
     required: true
   },
 
-  product_Image:{
+  product_image:{
     type: String,
     required: ''
   }

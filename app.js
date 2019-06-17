@@ -62,7 +62,7 @@ function auth(req, res, next) {
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use(auth);
+//app.use(auth);
 app.use("/product", productRouter);
 app.use("/product_type", product_typeRouter);
 
