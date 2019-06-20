@@ -7,8 +7,9 @@ var session = require("express-session");
 var fileStore = require("session-file-store")(session);
 var Authenticate = require("./authenticate");
 var passport = require("passport");
+var cors = require("cors");
 
-const url = "mongodb://localhost:27017/BikeGears";
+const url = "mongodb://localhost:27017/WebApiBikerGears";
 const connect = mongoose.connect(url, {
   useNewUrlParser: true,
   useCreateIndex: true
@@ -27,6 +28,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var productRouter = require("./routes/product");
 var product_typeRouter = require("./routes/product_type");
+var uploadRouter = require("./routes/upload");
 
 var app = express();
 
@@ -49,6 +51,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('*', cors({
+  origin: 'http://localhost:5501',
+  credentials: true
+}));
+
 function auth(req, res, next) {
   console.log(req.user);
   if (!req.user) {
@@ -60,10 +67,12 @@ function auth(req, res, next) {
   }
 }
 
+app.use('*', cors());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 //app.use(auth);
 app.use("/product", productRouter);
 app.use("/product_type", product_typeRouter);
+app.use("/upload", uploadRouter);
 
 module.exports = app;

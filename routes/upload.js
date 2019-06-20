@@ -15,7 +15,7 @@ var imageFileFilter = (req, file, cb) => {
     return cb(new Error("You can upload only image files!"), false);
   }
   cb(null, true);
-};ss
+};
 
 var upload = multer({
   storage: storage,

@@ -11,7 +11,7 @@ var productSchema = new Schema({
   product_type: {
     type: Schema.Types.ObjectId,
     ref: 'product_type',
-    required: false
+    required: true
   },
 
   product_description: {
