@@ -11,7 +11,6 @@ router.route("/")
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(products);
-          console.log(products.product_type);
         },
         err => next(err)
       )

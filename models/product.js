@@ -14,10 +14,10 @@ var productSchema = new Schema({
     required: true
   },
 
-  product_description: {
-    type: String,
-    required: true
-  },
+    product_description: {
+      type: String,
+      required: true
+    },
 
   product_price: {
     type: String,
